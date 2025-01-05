@@ -22,7 +22,7 @@ public class GithubactionAppApplication {
     public String welcome() {
         log.info("Welcome to Github Actions! in Spring Boot");
 
-        return "Welcome to Github Actions! in Spring Boot";
+        return "Welcome to Github Actions! in Spring Boot II";
     }
 
     public static void main(String[] args) {

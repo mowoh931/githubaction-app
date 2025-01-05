@@ -107,7 +107,9 @@
                 </configuration>
             </plugin>
         </plugins>
-        <finalName>${name}</finalName>
+
+
+        <finalName>${project.name}</finalName>
     </build>
 
 </project>
