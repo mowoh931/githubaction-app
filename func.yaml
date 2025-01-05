@@ -1,9 +1,0 @@
-name: githubaction-app-function
-namespace: default
-runtime: java
-type: http
-image: mowoh/githubaction-app:latest
-labels:
-  app: githubaction-app
-annotations:
-  description: "A simple function for the GitHub Action app"

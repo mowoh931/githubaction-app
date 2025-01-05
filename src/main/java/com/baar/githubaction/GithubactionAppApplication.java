@@ -18,6 +18,13 @@ public class GithubactionAppApplication {
         return "Hello World, Github Actions! in Spring Boot";
     }
 
+    @GetMapping("/welcome")
+    public String welcome() {
+        log.info("Welcome to Github Actions! in Spring Boot");
+
+        return "Welcome to Github Actions! in Spring Boot";
+    }
+
     public static void main(String[] args) {
         SpringApplication.run(GithubactionAppApplication.class, args);
     }
