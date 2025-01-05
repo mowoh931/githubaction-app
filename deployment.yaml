@@ -1,0 +1,37 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: githubaction-app-deployment
+  labels:
+    app: githubaction-app
+spec:
+  replicas: 3
+  selector:
+    matchLabels:
+      app: githubaction-app
+  template:
+    metadata:
+      labels:
+        app: githubaction-app
+    spec:
+      containers:
+        - name: githubaction-app
+          image: mowoh/githubaction-app:latest
+          ports:
+            - containerPort: 8080
+          env:
+            - name: JAVA_OPTS
+              value: "-Xms512m -Xmx512m"
+---
+apiVersion: v1
+kind: Service
+metadata:
+  name: githubaction-app-service
+spec:
+  selector:
+    app: githubaction-app
+  ports:
+    - protocol: TCP
+      port: 80
+      targetPort: 8080
+  type: LoadBalancer
