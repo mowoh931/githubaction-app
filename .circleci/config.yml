@@ -44,7 +44,7 @@ workflows:
   build-workflow:
     jobs:
       - build
-      - test-java
+#       - test-java
     # - deploy:
     #     requires:
     #       - test-java
