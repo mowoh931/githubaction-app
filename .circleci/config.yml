@@ -34,12 +34,6 @@ jobs:
 workflows:
   build-and-test:
     jobs:
-      - test-java
-    # - deploy:
-    #     requires:
-    #       - test-java
-version: 2.1
-jobs:
   build:
     docker:
       - image: cimg/base:current
@@ -50,3 +44,19 @@ workflows:
   build-workflow:
     jobs:
       - build
+      - test-java
+    # - deploy:
+    #     requires:
+    #       - test-java
+# version: 2.1
+# jobs:
+#   build:
+#     docker:
+#       - image: cimg/base:current
+#     resource_class: de-baar/k8s
+#     steps:
+#       - run: echo "Hi I'm on a Container Runner!"
+# workflows:
+#   build-workflow:
+#     jobs:
+#       - build
